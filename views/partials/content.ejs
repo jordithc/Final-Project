@@ -1,0 +1,99 @@
+<!--content.ejs Tse Hoi Cheung 301234975 2OCT2022-->
+<!--For Home Page-->
+<% if (title == "Home") { %>
+    <div class="container font-weight-bold text-center p-3">
+    <h1 class="p-5">Hello.</h1>
+    <h2 class="p-3">My name is Jordi</h2>
+    <p class="text-secondary p-3">MY MISSION</p>
+    <p class="p-3">To utilize technology and data - more accessible and useful with security</p>
+    <a class="btn btn-outline-info" href="/about" role="button">Learn more about me</a>
+    </div>
+<% } else {%><%} %>
+
+<!--For About Me-->
+<% if (title == "About") { %>
+    <div class="container-md font-weight-bold text-center p-3">
+    <h1 class="p-3">I am...</h1></p>
+    <p>Tse Hoi Cheung</p>
+    <p class="p-3">Begin my journey with a degree with Sociology where I develop my interest in statistic. 
+      And combine my skill from software engineering, 
+      I have done statiscal data analysis and database modelling and design. Currently, I am working on Web Application development. </p>
+    <p class="p-3">I can work with C#, Java, JavaScript, HTML, CSS MySQL, R and Python</p>
+    <p class="p-5">Click <a href="/files/HCTSE_Resume.pdf" download>here</a> for my resume</p>   
+    <img class="align-self-end mr-3" src="/images/myPhoto.PNG">
+    </div>
+<% } else {%><%} %>
+
+<!--For Projects-->
+<% if (title == "Projects") { %>
+    <div class="container-fluid text-center position-absolute bottom-50 ">
+        <div class="row mb-4">
+          <div class="col">
+            <img class=" w-75 p-5" src="images/database.jpg"  alt="database">
+            <p>Construct Database for E-commence Company</p>
+          </div>
+          <div class="col">
+            <img class="w-75 p-5" src="images/webapp.png"  alt="webapp">
+            <p>Design Study Focus Web App for Students</p>
+          </div>
+          <div class="col">
+            <img class="w-50 p-5" src="images/family.jpg"  alt="family">
+            <p>Regression Analysis on Family Data</p>
+          </div>
+        </div>
+      </div>
+<% } else {%><%} %>
+
+<!--For Services-->
+<% if (title == "Services") { %>
+    <div class="container-fluid text-center position-absolute bottom-50 ">
+        <div class="row mb-4">
+          <div class="col">
+            <img class=" w-75 p-5" src="images/webappdeve.jpg"  alt="webapp development
+            ">
+            <p>Web App Development</p>
+          </div>
+          <div class="col">
+            <img class="w-75 p-5" src="images/ERD.png"  alt="erd">
+            <p>Database Design</p>
+          </div>
+          <div class="col">
+            <img class="w-100 p-5" src="images/dataAnalysis.png"  alt="dataAnalysis">
+            <p>Data Analysis</p>
+          </div>
+        </div>
+      </div>
+<% } else {%><%} %>
+
+<!--For Contact-->
+<% if (title == "Contact") { %>
+    <div class="container font-weight-bold text-center">
+      <div class="row mb-4">
+        <div class="col">
+        <h1 class="p-3"> Contact Me</h1>
+        <p class="p-3"></p>
+        <a href="tel:+14379895948">Phone: (437) 989-5948</a><br><br>
+        <a href="mailto:tsehoicheung98@gmail.com">Email: tsehoicheung98@gmail.com</a><br><br>
+        <a href="https://github.com/jordithc"><i class="fa-brands fa-github"></i> GitHub</a><br><br>
+        <a href="https://www.instagram.com/cheungsuk/"><i class="fa-brands fa-instagram">Instagram</i></a>
+        </div>
+        <div class="col">
+          <h1>Leave Your Message:</h1>
+          <form class="mb-3">
+            
+              <label>First name:</label><br>
+              <input type="text" name="fname"><br>
+              <label>Last name:</label><br>
+              <input type="text" name="lname"><br>
+              <label>Contact Number:</label><br>
+              <input type="number" name="number"><br>
+              <label>Email:</label><br>
+              <input type="email" name="email"><br>
+              <label>Message:</label><br>
+              <textarea name="message" placeholder="thank you for your message" style="height:170px"></textarea>
+          
+          </form>
+        </div>
+      </div>
+
+<% } else {%><%} %>

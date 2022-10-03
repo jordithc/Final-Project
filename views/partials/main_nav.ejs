@@ -1,0 +1,56 @@
+ <!--Main Navigation-->
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Protfilo</a>
+      <img src="/images/logo.png" style="float:right;width:60px;height:42px">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <% if (title == "Home"){ %>
+          <li class="nav-item active">
+          <% } else { %>
+          <li class="nav-item">
+          <% } %>
+            <a class="nav-link" href="/home"><i class="fa-solid fa-house-user"></i> Home</a>
+          </li>
+
+          <% if (title == "About") { %>
+          <li class="nav-item active">
+          <% } else { %>
+          <li class="nav-item">
+          <% } %>
+            <a class="nav-link" href="/about"><i class="fa-sharp fa-solid fa-circle-info"></i> About Me</a>
+          </li>
+
+
+          <% if (title == "Projects") { %>
+          <li class="nav-item active">
+          <% } else { %>
+          <li class="nav-item">
+          <% } %>
+          <a class="nav-link" href="/projects"><i class="fa-regular fa-file"></i> Projects</a>
+          </li>
+
+          <% if (title == "Services") { %>
+          <li class="nav-item active">
+          <% } else { %>
+          <li class="nav-item">
+          <% } %>
+          <a class="nav-link" href="/services"><i class="fa-solid fa-briefcase"></i> Services</a>
+          </li>
+
+          <% if (title == "Contact") { %>
+          <li class="nav-item active">
+          <% } else { %>
+          <li class="nav-item">
+          <% } %>
+          <a class="nav-link" href="/Contact"><i class="fa-solid fa-phone"></i> Contact</a>
+          </li>
+
+      </div>
+    </div>
+  </nav>
