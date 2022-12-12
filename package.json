@@ -30,7 +30,7 @@
     "save": "^2.9.0"
   },
   "description": "app for comp229",
-  "main": "index.js",
+  "main": "server.js",
   "author": "Tse Hoi Cheung",
   "license": "ISC",
   "devDependencies": {

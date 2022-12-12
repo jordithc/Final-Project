@@ -1,0 +1,33 @@
+<%- include ('../partials/header.ejs') %>
+
+<%- include ('../partials/main_nav.ejs') %>
+
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %></h1>
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="nameTextField"></label>
+                    <input type="hidden" class="form-control"
+                    id="nameTextField"
+                    placeholder="Enter the Survey Title"
+                    name="responses"
+                    value="<%= survey.responses+1 %>"
+                    required>
+                </div>
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Finish</button>
+
+                    <a href="/survey-list" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel</a>
+                      
+            </form>
+           
+        </div>
+    </div>
+</div>
+
+<%- include ('../partials/bottom_nav.ejs') %>  
+
+<%- include ('../partials/footer.ejs')  %>

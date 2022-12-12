@@ -1,0 +1,64 @@
+<%- include ('../partials/header.ejs') %>
+
+<%- include ('../partials/main_nav.ejs') %>
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-12">
+            <h4><%= title %></h4>
+            <br>
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="optionTextField">Option 1:</label>
+                    <input type="text" class="form-control"
+                    id="optionTextField"
+                    placeholder="Enter the Option"
+                    name="option1"
+                    value="<%=question.option1 %>"
+                    required>
+                </div>
+                <div class="form-group">
+                    <label for="optionTextField2">Option 2:</label>
+                    <input type="text" class="form-control"
+                    id="optionTextField2"
+                    placeholder="Enter the Option"
+                    name="option2"
+                    value="<%=question.option2 %>"
+                    required>
+                </div>
+                <div class="form-group">
+                    <label for="optionTextField3">Option 3:</label>
+                    <input type="text" class="form-control"
+                    id="optionTextField3"
+                    placeholder="Enter the Option"
+                    name="option3"
+                    value="<%=question.option3 %>"
+                    required>
+                </div>
+                <div class="form-group">
+                    <label for="optionTextField4">Option 4:</label>
+                    <input type="text" class="form-control"
+                    id="optionTextField4"
+                    placeholder="Enter the Option"
+                    name="option4"
+                    value="<%=question.option4 %>"
+                    required>
+                </div>
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit
+                </button>
+                <a href="/survey-list/questions-mcq/<%=question.surveyId%>" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> Cancel
+                </a>
+                
+            </form>
+            
+           
+        </div>
+    </div>
+</main>
+
+
+<%- include ('../partials/bottom_nav.ejs') %>  
+
+<%- include ('../partials/footer.ejs')  %>

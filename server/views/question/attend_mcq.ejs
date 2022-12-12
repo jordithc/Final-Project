@@ -1,0 +1,42 @@
+<%- include ('../partials/header.ejs') %>
+
+<%- include ('../partials/main_nav.ejs') %>
+
+<!-- Main Content -->
+<main class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center"><%= title %></h1><br>
+            <form class="form" method="POST">
+                    <% for(let count = 0; count < QuestionList.length; count++) { %>
+                        <div class="form-group">
+                            <% if (QuestionList[count].option1 !=null && QuestionList[count].option2 !=null && QuestionList[count].option3 !=null && QuestionList[count].option4 !=null) { %>
+                                <label for="questionTextField"><%= count+1 %>. <%= QuestionList[count].question1 %></label><br>
+                                <input type="radio" id="option1" value="<%=QuestionList[count].option1 %> " name="<%= count+1 %>" required>
+                                <label for="option1"><%=QuestionList[count].option1 %> </label><br>
+                                <input type="radio" id="option2" value="<%=QuestionList[count].option2 %> " name="<%= count+1 %>" required>
+                                <label for="option2"><%=QuestionList[count].option2 %> </label><br>
+                                <input type="radio" id="option3" value="<%=QuestionList[count].option3 %> " name="<%= count+1 %>" required>
+                                <label for="option3"><%=QuestionList[count].option3 %> </label><br>                   
+                                <input type="radio" id="option4" value="<%=QuestionList[count].option4 %> " name="<%= count+1 %>" required>
+                                <label for="option4"><%=QuestionList[count].option4 %> </label><br> 
+                            <% } %>                     
+                        </div>  
+                    <% } %>  
+                           
+                    <button class="btn btn-primary" type="submit">
+                        <i class="fas fa-edit"></i> Submit
+                    </button>
+                    <a href="/survey-list" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel
+                    </a>                             
+            </form>
+        </div>
+    </div>
+</main>
+
+
+
+<%- include ('../partials/bottom_nav.ejs') %>  
+
+<%- include ('../partials/footer.ejs')  %>

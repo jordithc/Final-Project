@@ -1,0 +1,77 @@
+<%- include ('../partials/header.ejs') %>
+
+<%- include ('../partials/main_nav.ejs') %>
+
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %></h1>
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="nameTextField">Survey Title</label>
+                    <input type="text" class="form-control"
+                    id="nameTextField"
+                    placeholder="Enter the Survey Title"
+                    name="title"
+                    value="<%= survey.title %>"
+                    required>
+                </div>
+                <div class="form-group">
+                    <label for="authorTextField">Survey Author</label>
+                    <input type="text" class="form-control"
+                    id="authorTextField"
+                    placeholder="Enter the Survey Author"
+                    name="author"
+                    value="<%= survey.author %>" 
+                    required>
+                </div>
+                <div class="form-group">
+                    <label for="activeDateField">Survey Active Date</label>
+                    <input type="date" class="form-control"
+                    id="activeDateField"
+                    name="activeDate" 
+                    value="<%= survey.activeDate %>"
+                    max="<%= survey.expiryDate %>"
+                    required>
+                </div>
+                <div class="form-group">
+                    <label for="expiryDateField">Survey Expiry Date</label>
+                    <input type="date" class="form-control"
+                    id="expiryDateField"
+                    name="expiryDate"
+                    value="<%= survey.expiryDate%>" 
+                    min="<%= survey.activeDate %>"
+                    required>
+                </div>
+                <% if (survey.type == 'SAQ') { %>
+                    <div class="form-group">
+                        <label for="type">Please Select Survey Type:</label>
+                        <select name="type" id="type">
+                          <option value="MCQ">Multiple Choice Question</option>
+                          <option value="SAQ" selected>Short Answer Question</option>
+                        </select>
+                    </div>
+                    <% } else { %>
+                        <div class="form-group">
+                            <label for="type">Please Select Survey Type:</label>
+                            <select name="type" id="type">
+                              <option value="MCQ">Multiple Choice Question</option>
+                              <option value="SAQ" >Short Answer Question</option>
+                            </select>
+                        </div>
+                    <% } %>
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button>
+
+                    <a href="/survey-list" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel</a>
+                      
+            </form>
+           
+        </div>
+    </div>
+</div>
+
+<%- include ('../partials/bottom_nav.ejs') %>  
+
+<%- include ('../partials/footer.ejs')  %>
