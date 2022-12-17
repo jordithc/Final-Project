@@ -6,12 +6,15 @@
     <div class="row">
         <div class="col-md-offset-3 col-md-12">
             <h1><%= title %></h1>        
-            <!--insert auth-->
-            <a href="/survey-list/add" class="btn btn-primary" role="button">
+            <% if(typeof displayName=='string'&& displayName){%>
+                <a href="/survey-list/add" class="btn btn-primary" role="button">
                 <i class="fas fa-plus-circle"></i>Add Survey</a>
+            <% } %> 
+
             <br>
             <table class="table table-bordered table-striped table-hover">
                 <tr>
+                    <% if(typeof displayName=='string'&& displayName){%>
                         <th class="text-center col-2">Survey Title</th>
                         <th class="text-center col-2">Survey Author</th>
                         <th class="text-center col-1">Survey Type</th>
@@ -21,18 +24,22 @@
                         <th class="text-center col-2"></th>
                         <th class="text-center col-1"></th>
                         <th class="text-center col-1"></th>
+                        <% } else { %>
+                            <th class="text-center col-5">Survey Title</th>
+                            <th class="text-center col-3">Survey Type</th>
+                            <th class="text-center col-1">Number of Response</th>
+                            <th class="text-center col-3"></th>
+                        <% } %> 
                 </tr>
                 <% for(let count =0; count<SurveyList.length;count++){%>
                     <tr>
+                        <% if(typeof displayName=='string'&& displayName){%>
                             <td class="text-center col-2"><%= SurveyList[count].title %></td>
                             <td class="text-center col-2"><%= SurveyList[count].author %></td>
                             <td class="text-center col-"><%= SurveyList[count].type %></td>
                             <td class="text-center col-"><%= SurveyList[count].activeDate %></td>
                             <td class="text-center col-"><%= SurveyList[count].expiryDate %></td>
                             <td class="text-center col-1"><%= SurveyList[count].responses %></td>
-                            <!--
-                            <td class="text-center col-2"><a href="/survey-list/questions/<%= SurveyList[count]._id %>" class="btn btn-secondary">
-                            -->
                             <% if (SurveyList[count].type == 'SAQ') { %>
                                 <td class="text-center col-2">
                                     <a href="/survey-list/questions/<%= SurveyList[count]._id %>" class="btn btn-secondary">
@@ -52,6 +59,24 @@
                                 <a href="/survey-list/delete/<%= SurveyList[count]._id %>" class="btn btn-danger btn-sm">
                                 <i class="fas fa-trash-alt"></i> Delete</a>
                             </td> 
+                            <% } else { %> 
+                                <td class="text-center col-5"><%= SurveyList[count].title %></td>
+                                <td class="text-center col-3"><%= SurveyList[count].type %></td>
+                                <td class="text-center col-1">
+                                    <%= SurveyList[count].responses %>
+                                </td>
+                                <% if (SurveyList[count].type == 'SAQ') { %>
+                                    <td class="text-center col-3" id="btndisabled">
+                                            <a href="/survey-list/attend-survey/<%= SurveyList[count]._id %>" class="btn btn-primary ">
+                                                Attempt</a>
+                                    </td>
+                                <% } else { %>
+                                    <td class="text-center col-3" id="btndisabled">
+                                        <a href="/survey-list/attend-mcq/<%= SurveyList[count]._id %>" class="btn btn-primary">
+                                            Attempt</a>
+                                    </td>
+                                <% } %>
+                             <% } %>
                             
                     </tr>
                 <%}%>
